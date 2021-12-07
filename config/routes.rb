@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :favorited_brands
   resources :brands
   resources :users
