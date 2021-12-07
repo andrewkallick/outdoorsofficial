@@ -12,6 +12,8 @@ class BrandResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :comments
+
   # Indirect associations
 
 end
