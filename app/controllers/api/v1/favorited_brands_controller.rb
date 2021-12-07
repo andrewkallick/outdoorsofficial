@@ -13,7 +13,7 @@ class Api::V1::FavoritedBrandsController < Api::V1::GraphitiController
     favorited_brand = FavoritedBrandResource.build(params)
 
     if favorited_brand.save
-      render jsonapi: favorited_brand, status: 201
+      render jsonapi: favorited_brand, status: :created
     else
       render jsonapi_errors: favorited_brand
     end
@@ -33,7 +33,7 @@ class Api::V1::FavoritedBrandsController < Api::V1::GraphitiController
     favorited_brand = FavoritedBrandResource.find(params)
 
     if favorited_brand.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: favorited_brand
     end

@@ -10,5 +10,4 @@ class FavoritedBrandResource < ApplicationResource
              foreign_key: :brand_id
 
   # Indirect associations
-
 end

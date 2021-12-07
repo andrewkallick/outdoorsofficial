@@ -1,10 +1,10 @@
 class BrandsController < ApplicationController
-  before_action :set_brand, only: [:show, :edit, :update, :destroy]
+  before_action :set_brand, only: %i[show edit update destroy]
 
   # GET /brands
   def index
     @q = Brand.ransack(params[:q])
-    @brands = @q.result(:distinct => true).includes(:comments).page(params[:page]).per(10)
+    @brands = @q.result(distinct: true).includes(:comments).page(params[:page]).per(10)
   end
 
   # GET /brands/1
@@ -18,15 +18,14 @@ class BrandsController < ApplicationController
   end
 
   # GET /brands/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /brands
   def create
     @brand = Brand.new(brand_params)
 
     if @brand.save
-      redirect_to @brand, notice: 'Brand was successfully created.'
+      redirect_to @brand, notice: "Brand was successfully created."
     else
       render :new
     end
@@ -35,7 +34,7 @@ class BrandsController < ApplicationController
   # PATCH/PUT /brands/1
   def update
     if @brand.update(brand_params)
-      redirect_to @brand, notice: 'Brand was successfully updated.'
+      redirect_to @brand, notice: "Brand was successfully updated."
     else
       render :edit
     end
@@ -44,17 +43,19 @@ class BrandsController < ApplicationController
   # DELETE /brands/1
   def destroy
     @brand.destroy
-    redirect_to brands_url, notice: 'Brand was successfully destroyed.'
+    redirect_to brands_url, notice: "Brand was successfully destroyed."
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_brand
-      @brand = Brand.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def brand_params
-      params.require(:brand).permit(:name, :description, :image, :sport, :category, :pricepoint, :highlyrated)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_brand
+    @brand = Brand.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def brand_params
+    params.require(:brand).permit(:name, :description, :image, :sport,
+                                  :category, :pricepoint, :highlyrated)
+  end
 end

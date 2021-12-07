@@ -14,5 +14,4 @@ class UserResource < ApplicationResource
              foreign_key: :brand_id
 
   # Indirect associations
-
 end

@@ -2,11 +2,11 @@ class User < ApplicationRecord
   # Direct associations
 
   has_many   :comments,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :favorited_brands,
-             :foreign_key => "brand_id",
-             :dependent => :destroy
+             foreign_key: "brand_id",
+             dependent: :destroy
 
   # Indirect associations
 
@@ -17,5 +17,4 @@ class User < ApplicationRecord
   def to_s
     username
   end
-
 end

@@ -14,5 +14,4 @@ class Comment < ApplicationRecord
   def to_s
     brand.to_s
   end
-
 end

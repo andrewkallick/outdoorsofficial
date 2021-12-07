@@ -4,7 +4,7 @@ class Brand < ApplicationRecord
   # Direct associations
 
   has_many   :comments,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -15,5 +15,4 @@ class Brand < ApplicationRecord
   def to_s
     name
   end
-
 end
