@@ -3,7 +3,8 @@ class BrandsController < ApplicationController
 
   # GET /brands
   def index
-    @brands = Brand.page(params[:page]).per(10)
+    @q = Brand.ransack(params[:q])
+    @brands = @q.result(:distinct => true).includes(:comments).page(params[:page]).per(10)
   end
 
   # GET /brands/1
