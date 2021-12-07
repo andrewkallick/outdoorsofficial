@@ -1,0 +1,187 @@
+<% was_validated = brand.errors.any? %>
+
+<%= form_with(model: brand, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <% name_class = "form-control" %>
+    <% name_was_invalid = brand.errors.include?(:name) %>
+
+    <% if was_validated %>
+      <% if name_was_invalid %>
+        <% name_class << " is-invalid" %>
+      <% else %>
+        <% name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :name %>
+    <!-- Input for name start -->
+    <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
+    <!-- Input for name end -->
+    <% if name_was_invalid %>
+      <% brand.errors.full_messages_for(:name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for name end -->
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <% description_class = "form-control" %>
+    <% description_was_invalid = brand.errors.include?(:description) %>
+
+    <% if was_validated %>
+      <% if description_was_invalid %>
+        <% description_class << " is-invalid" %>
+      <% else %>
+        <% description_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :description %>
+    <!-- Input for description start -->
+    <%= f.text_field :description, class: description_class, placeholder: "Enter description" %>
+    <!-- Input for description end -->
+    <% if description_was_invalid %>
+      <% brand.errors.full_messages_for(:description).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for description end -->
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <% image_class = "form-control" %>
+    <% image_was_invalid = brand.errors.include?(:image) %>
+
+    <% if was_validated %>
+      <% if image_was_invalid %>
+        <% image_class << " is-invalid" %>
+      <% else %>
+        <% image_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :image %>
+    <!-- Input for image start -->
+    <%= f.text_field :image, class: image_class, placeholder: "Enter image" %>
+    <!-- Input for image end -->
+    <% if image_was_invalid %>
+      <% brand.errors.full_messages_for(:image).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for image end -->
+  <!-- Label and input for sport start -->
+  <div class="form-group">
+    <% sport_class = "form-control" %>
+    <% sport_was_invalid = brand.errors.include?(:sport) %>
+
+    <% if was_validated %>
+      <% if sport_was_invalid %>
+        <% sport_class << " is-invalid" %>
+      <% else %>
+        <% sport_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :sport %>
+    <!-- Input for sport start -->
+    <%= f.text_field :sport, class: sport_class, placeholder: "Enter sport" %>
+    <!-- Input for sport end -->
+    <% if sport_was_invalid %>
+      <% brand.errors.full_messages_for(:sport).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for sport end -->
+  <!-- Label and input for category start -->
+  <div class="form-group">
+    <% category_class = "form-control" %>
+    <% category_was_invalid = brand.errors.include?(:category) %>
+
+    <% if was_validated %>
+      <% if category_was_invalid %>
+        <% category_class << " is-invalid" %>
+      <% else %>
+        <% category_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :category %>
+    <!-- Input for category start -->
+    <%= f.text_field :category, class: category_class, placeholder: "Enter category" %>
+    <!-- Input for category end -->
+    <% if category_was_invalid %>
+      <% brand.errors.full_messages_for(:category).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for category end -->
+  <!-- Label and input for pricepoint start -->
+  <div class="form-group">
+    <% pricepoint_class = "form-control" %>
+    <% pricepoint_was_invalid = brand.errors.include?(:pricepoint) %>
+
+    <% if was_validated %>
+      <% if pricepoint_was_invalid %>
+        <% pricepoint_class << " is-invalid" %>
+      <% else %>
+        <% pricepoint_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :pricepoint %>
+    <!-- Input for pricepoint start -->
+    <%= f.text_field :pricepoint, class: pricepoint_class, placeholder: "Enter pricepoint" %>
+    <!-- Input for pricepoint end -->
+    <% if pricepoint_was_invalid %>
+      <% brand.errors.full_messages_for(:pricepoint).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for pricepoint end -->
+  <!-- Label and input for highlyrated start -->
+  <div class="form-group">
+    <% highlyrated_class = "form-control" %>
+    <% highlyrated_was_invalid = brand.errors.include?(:highlyrated) %>
+
+    <% if was_validated %>
+      <% if highlyrated_was_invalid %>
+        <% highlyrated_class << " is-invalid" %>
+      <% else %>
+        <% highlyrated_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :highlyrated %>
+    <!-- Input for highlyrated start -->
+    <%= f.text_field :highlyrated, class: highlyrated_class, placeholder: "Enter highlyrated" %>
+    <!-- Input for highlyrated end -->
+    <% if highlyrated_was_invalid %>
+      <% brand.errors.full_messages_for(:highlyrated).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for highlyrated end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
