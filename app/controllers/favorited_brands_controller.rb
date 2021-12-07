@@ -24,7 +24,12 @@ class FavoritedBrandsController < ApplicationController
     @favorited_brand = FavoritedBrand.new(favorited_brand_params)
 
     if @favorited_brand.save
-      redirect_to @favorited_brand, notice: 'Favorited brand was successfully created.'
+      message = 'FavoritedBrand was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @favorited_brand, notice: message
+      end
     else
       render :new
     end
