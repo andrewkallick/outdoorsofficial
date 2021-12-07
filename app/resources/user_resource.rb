@@ -8,6 +8,8 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :comments
+
   has_many   :favorited_brands,
              foreign_key: :brand_id
 
