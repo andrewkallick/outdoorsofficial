@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :favorited_brands,
+             :foreign_key => "brand_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
