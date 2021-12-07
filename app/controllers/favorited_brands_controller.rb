@@ -1,24 +1,19 @@
 class FavoritedBrandsController < ApplicationController
   before_action :set_favorited_brand, only: %i[show edit update destroy]
 
-  # GET /favorited_brands
   def index
     @q = FavoritedBrand.ransack(params[:q])
     @favorited_brands = @q.result(distinct: true).includes(:user).page(params[:page]).per(10)
   end
 
-  # GET /favorited_brands/1
   def show; end
 
-  # GET /favorited_brands/new
   def new
     @favorited_brand = FavoritedBrand.new
   end
 
-  # GET /favorited_brands/1/edit
   def edit; end
 
-  # POST /favorited_brands
   def create
     @favorited_brand = FavoritedBrand.new(favorited_brand_params)
 
@@ -34,7 +29,6 @@ class FavoritedBrandsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /favorited_brands/1
   def update
     if @favorited_brand.update(favorited_brand_params)
       redirect_to @favorited_brand,
@@ -44,7 +38,6 @@ class FavoritedBrandsController < ApplicationController
     end
   end
 
-  # DELETE /favorited_brands/1
   def destroy
     @favorited_brand.destroy
     message = "FavoritedBrand was successfully deleted."
@@ -57,12 +50,10 @@ class FavoritedBrandsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_favorited_brand
     @favorited_brand = FavoritedBrand.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def favorited_brand_params
     params.require(:favorited_brand).permit(:brand_id)
   end

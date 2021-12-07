@@ -1,26 +1,21 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: %i[show edit update destroy]
 
-  # GET /brands
   def index
     @q = Brand.ransack(params[:q])
     @brands = @q.result(distinct: true).includes(:comments).page(params[:page]).per(10)
   end
 
-  # GET /brands/1
   def show
     @comment = Comment.new
   end
 
-  # GET /brands/new
   def new
     @brand = Brand.new
   end
 
-  # GET /brands/1/edit
   def edit; end
 
-  # POST /brands
   def create
     @brand = Brand.new(brand_params)
 
@@ -31,7 +26,6 @@ class BrandsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /brands/1
   def update
     if @brand.update(brand_params)
       redirect_to @brand, notice: "Brand was successfully updated."
@@ -40,7 +34,6 @@ class BrandsController < ApplicationController
     end
   end
 
-  # DELETE /brands/1
   def destroy
     @brand.destroy
     redirect_to brands_url, notice: "Brand was successfully destroyed."
@@ -48,12 +41,10 @@ class BrandsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_brand
     @brand = Brand.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def brand_params
     params.require(:brand).permit(:name, :description, :image, :sport,
                                   :category, :pricepoint, :highlyrated)
