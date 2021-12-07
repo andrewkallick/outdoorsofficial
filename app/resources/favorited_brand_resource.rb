@@ -6,6 +6,9 @@ class FavoritedBrandResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :user,
+             foreign_key: :brand_id
+
   # Indirect associations
 
 end
