@@ -3,7 +3,7 @@ class BrandsController < ApplicationController
 
   # GET /brands
   def index
-    @brands = Brand.all
+    @brands = Brand.page(params[:page]).per(10)
   end
 
   # GET /brands/1
