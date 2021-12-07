@@ -1,6 +1,8 @@
 class Comment < ApplicationRecord
   # Direct associations
 
+  belongs_to :brand
+
   belongs_to :user
 
   # Indirect associations
