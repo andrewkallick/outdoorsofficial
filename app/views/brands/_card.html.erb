@@ -17,7 +17,9 @@
 
       <dt>Image</dt>
       <!-- Display image start -->
-      <dd><%= brand.image %></dd>
+      <dd>
+        <%= cl_image_tag @brand.image, class: "img-fluid" %>
+      </dd>
       <!-- Display image end -->
 
       <dt>Sport</dt>
