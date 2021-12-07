@@ -1,12 +1,6 @@
-<!-- Form favorited_brand start -->
 <%= form_with(model: @favorited_brand, local: true) do |f| %>
-<!-- Form favorited_brand end -->
 
-  <!-- Label and input for brand_id start -->
-  <!-- Input for brand_id start -->
   <%= f.hidden_field :brand_id, value: @user.id %>
-  <!-- Input for brand_id end -->
-  <!-- Label and input for brand_id end -->
 
   <%= f.submit "Create favorited brand", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

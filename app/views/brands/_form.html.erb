@@ -1,7 +1,6 @@
 <% was_validated = brand.errors.any? %>
 
 <%= form_with(model: brand, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for name start -->
   <div class="form-group">
     <% name_class = "form-control" %>
     <% name_was_invalid = brand.errors.include?(:name) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :name %>
-    <!-- Input for name start -->
     <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
-    <!-- Input for name end -->
     <% if name_was_invalid %>
       <% brand.errors.full_messages_for(:name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for name end -->
-  <!-- Label and input for description start -->
   <div class="form-group">
     <% description_class = "form-control" %>
     <% description_was_invalid = brand.errors.include?(:description) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :description %>
-    <!-- Input for description start -->
     <%= f.text_field :description, class: description_class, placeholder: "Enter description" %>
-    <!-- Input for description end -->
     <% if description_was_invalid %>
       <% brand.errors.full_messages_for(:description).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for description end -->
-  <!-- Label and input for image start -->
   <div class="form-group">
     <% image_class = "form-control" %>
     <% image_was_invalid = brand.errors.include?(:image) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :image %>
-    <!-- Input for image start -->
     <%= f.file_field :image, class: "form-control" %>
-    <!-- Input for image end -->
     <% if image_was_invalid %>
       <% brand.errors.full_messages_for(:image).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for image end -->
-  <!-- Label and input for sport start -->
   <div class="form-group">
     <% sport_class = "form-control" %>
     <% sport_was_invalid = brand.errors.include?(:sport) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :sport %>
-    <!-- Input for sport start -->
     <%= f.text_field :sport, class: sport_class, placeholder: "Enter sport" %>
-    <!-- Input for sport end -->
     <% if sport_was_invalid %>
       <% brand.errors.full_messages_for(:sport).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for sport end -->
-  <!-- Label and input for category start -->
   <div class="form-group">
     <% category_class = "form-control" %>
     <% category_was_invalid = brand.errors.include?(:category) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :category %>
-    <!-- Input for category start -->
     <%= f.text_field :category, class: category_class, placeholder: "Enter category" %>
-    <!-- Input for category end -->
     <% if category_was_invalid %>
       <% brand.errors.full_messages_for(:category).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,8 +111,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for category end -->
-  <!-- Label and input for pricepoint start -->
   <div class="form-group">
     <% pricepoint_class = "form-control" %>
     <% pricepoint_was_invalid = brand.errors.include?(:pricepoint) %>
@@ -145,9 +124,7 @@
     <% end %>
 
     <%= f.label :pricepoint %>
-    <!-- Input for pricepoint start -->
     <%= f.text_field :pricepoint, class: pricepoint_class, placeholder: "Enter pricepoint" %>
-    <!-- Input for pricepoint end -->
     <% if pricepoint_was_invalid %>
       <% brand.errors.full_messages_for(:pricepoint).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -156,8 +133,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for pricepoint end -->
-  <!-- Label and input for highlyrated start -->
   <div class="form-group">
     <% highlyrated_class = "form-control" %>
     <% highlyrated_was_invalid = brand.errors.include?(:highlyrated) %>
@@ -171,9 +146,7 @@
     <% end %>
 
     <%= f.label :highlyrated %>
-    <!-- Input for highlyrated start -->
     <%= f.text_field :highlyrated, class: highlyrated_class, placeholder: "Enter highlyrated" %>
-    <!-- Input for highlyrated end -->
     <% if highlyrated_was_invalid %>
       <% brand.errors.full_messages_for(:highlyrated).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -182,6 +155,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for highlyrated end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

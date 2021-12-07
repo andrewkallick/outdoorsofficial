@@ -6,41 +6,27 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Name</dt>
-      <!-- Display name start -->
       <dd><%= brand.name %></dd>
-      <!-- Display name end -->
 
       <dt>Description</dt>
-      <!-- Display description start -->
       <dd><%= brand.description %></dd>
-      <!-- Display description end -->
 
       <dt>Image</dt>
-      <!-- Display image start -->
       <dd>
         <%= cl_image_tag @brand.image, class: "img-fluid" %>
       </dd>
-      <!-- Display image end -->
 
       <dt>Sport</dt>
-      <!-- Display sport start -->
       <dd><%= brand.sport %></dd>
-      <!-- Display sport end -->
 
       <dt>Category</dt>
-      <!-- Display category start -->
       <dd><%= brand.category %></dd>
-      <!-- Display category end -->
 
       <dt>Pricepoint</dt>
-      <!-- Display pricepoint start -->
       <dd><%= brand.pricepoint %></dd>
-      <!-- Display pricepoint end -->
 
       <dt>Highlyrated</dt>
-      <!-- Display highlyrated start -->
       <dd><%= brand.highlyrated %></dd>
-      <!-- Display highlyrated end -->
 
     </dl>
 
@@ -49,21 +35,17 @@
         <%= link_to_show_or_back brand, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link brand start -->
       <div class="col">
         <%= link_to edit_brand_url(brand), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link brand end -->
 
-      <!-- Delete link brand start -->
       <div class="col">
         <%= link_to brand, method: :delete, data: { confirm: "Do you really want to delete this brand?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link brand end -->
     </div>
   </div>
 
