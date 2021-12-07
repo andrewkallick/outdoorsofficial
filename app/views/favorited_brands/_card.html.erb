@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>Brand</dt>
       <!-- Display brand_id start -->
-      <dd><%= favorited_brand.brand_id %></dd>
+      <dd>
+        <% if @favorited_brand.user.present? %>
+          <%= link_to favorited_brand.user, favorited_brand.user %>
+        <% end %>
+      </dd>
       <!-- Display brand_id end -->
 
     </dl>
